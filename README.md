@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+<h1>김경석</h1>
+# 4주차 2023-03-23  
+## react h태그 사용법  
+### 앞에 붙인 샵 갯수에 따라 h1 h2 h3..가 됨.  
+br태그의 경우 문장 뒤에 스페이스 두번을 누르면 됨.  
+ol태그의 경우는 앞에 번호+.을 붙이고 띄워주면 차례로 들어가게 됨.  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
+<h2>3주차 2023-03-16</h2>
+<br>
+<h2>버전 확인 하는 법</h2>
+<h3>$ □□□ --version / $ □□□ -v</h3>
+<br>
+<h2>리액트 개념 정리 1</h2>
+<h3>복잡한 사이트를 쉽고 빠르게 제작, 관리하기 위해 만들어진 것.<br>
+SPA를 쉽고 빠르게 만들 수 있도록 해주는 도구.<br>
+// SPA = 페이지가 하나인 어플리케이션(Single Page Application)
+</h3>
+<br>
+<h2>리액트의 장점</h2>
+<h3>
+1. 빠른 업데이트와 렌더링 속도 - Virtual DOM이 있어 가능<br>
+// Virtual DOM 은 DOM 조작의 비효율로 인해 속도가 느려지는 것을 감안해 새로 고안한 방법.<br>
+// DOM은 동기식 (웹페이지의 일부에 대한 갱신 등의 요청에 대해 그때그때 새로운 웹페이지를 생성해 전달해줌)<br>
+// 그에반해 Virtual DOM은 비동기식(같은 요청에 대해 일부에 대한 정보만 갱신하여 전달해줌.)
+<br>
+2. 컴포넌트 기반 구조.<br>
+하나의 페이지는 컴포넌트라는, 수많은 조각들에 의해 구성되어 있다.<br>
+수정이 필요한 하나의 컴포넌트를 위해 다른 컴포넌트를 수정할 필요가 없어 유지보수에 편하다.
+<br>
+3. 재사용성<br>
+반복적인 작업을 줄여주기에 생산성을 높여준다.<br>
+유지보수가 용이하다. (장점2에 의해)<br>
+--재사용이 가능하기 위해서는 해당 모듈의 의존성이 없어야만 한다.<br>
+4. 오픈소스 프로젝트로 관리되고있어 계속 발전 중.<br>
+5. 활발한 지식 공유 & 커뮤니티<br>
+6. 모바일 앱의 개발이 가능함. (리액트 네이티브)<br>
+</h3><br>
+<h2>리액트의 단점<h2>
+<h3>
+1. 방대한 학습량 (BUT, 자바스크립트를 학습하고 있을 경우 시간이 단축됨)<br>
+2. 높은 상태 관리 복잡도 (state, component life cycle 등의 개념 숙지 필요)<br>
+</h3>
