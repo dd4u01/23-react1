@@ -8,6 +8,25 @@
 3. 띄워주면
 4. 차례로 들어가게 됨.  
 
+### Bable이란?
+    JSX를 컴파일 해줌.
+### createElelment() 함수란?
+    - 코드의 자동 검사, 수정
+    - 자바스크립트로의 변환
+### JSX의 장점
+    코드가 간결해 진다.
+    가독성이 향상된다.
+    Injection Attack이라 불리는 해킹방법을 방어해 보안이 강함.
+### JSX의 사용
+    자바스크립트 문법 + XML, HTML을 섞어서 사용함.
+    EX - const element = <h1> 안녕, {name}</h1>
+
+    html, xml에 자바스크립트 코드를 사용할시 {}에 사용
+    ※ 태그에 속성값을 넣고싶다면?
+     - 큰따옴표 사이에 문자열 넣기
+     const element = <div tabIndex="0"></div>;
+     - 중괄호 사이에 자바스크립트 코드를 넣기
+     const element - <img scr={user.avatarUrl}></img>;
 
 
 <h2>3주차 2023-03-16</h2>
