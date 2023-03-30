@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>React App</title>
+    <!--
+        보통 title 밑으로 script 등에 대한 링크를 넣는다.
+    -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+  <body>
+    <div id="root"></div>
+
+    <!-- 실행 스크립트-->
+    <script type="text/babel">
+        function tick() {
+            const element = (
+                <div>
+                    <h1>안녕, 리액트?</h1>
+                    <h2>현재 시간 : {new Date().toLocaleTimeString()}</h2>
+                </div>
+            )
+            ReactDOM.render(element, document.getElementById('root') )
+        }
+        
+        setInterval(tick, 1000);
+    </script>
+  </body>
+</html>
