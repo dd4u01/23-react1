@@ -145,6 +145,19 @@ this.setState({
 });
 ```
     > state 변경 시에는 setState() 함수를 사용할 것.
+비유를 통해 알아보는 component, element, instance
+    Component -> 빵
+    elelment -> 빵틀
+    instance -> 재료
+#### 생명주기
+    **생명주기**란 컴포넌트의 생성 시점, 사용 시점, 종료 시점을 나타내는 것이다.
+    1. constructor가 실행되면서 컴포넌트가 생성됨
+    2. 생성 직후 componentDidMount() 함수가 호출됨.
+    3. 컴포넌트 소멸 전까지 여러 번 렌더링함.
+        > 렌더링은 props, setState(), forceUpdate() 에 의해 상태가 변경되면 이루어짐.
+    4. 렌더링이 끝나면 componentDinUpdate() 함수가 호출됨.
+    5. 마지막으로 컴포넌트가 언마운트 되면 componentWillUnmount() 함수가 호출됨.
+    ※ **교재 183p 생명주기 사진 참고**
 ## 5주차 2023-03-30
 ### babel 링크 위치  
     > 구글 react 검색 - react 사이트
