@@ -1,4 +1,23 @@
 # 김경석
+## 6주차 2023-04-06
+### CH05 컴포넌트와 props
+#### 컴포넌트 추출
+    > 큰 컴포넌트에서 일부를 추출해서 새로운 컴포넌트를 만드는 것.
+     > 처음부터 1개의 컴포넌트에 하나의 기능만 사용하도록 설계하는 것이 좋다.
+    
+```js
+ex - 이미지를 담당하는 Avatar 컴포넌트
+    function Avatar(props) {
+        return(
+            <img className="Avatar"
+                src={props.user.avatarUrl}
+                alt={props.user.name}>
+        );
+    }
+
+    export default Avatar;
+```
+    > 만들어둔 컴포넌트를 사용할 때, 기존 컴포넌트에서는 꼭 위에 **import** 로 감싸야하고, 마지막에 export default를 해주어야 한다.
 ## 5주차 2023-03-30
 ### babel 링크 위치  
     > 구글 react 검색 - react 사이트
