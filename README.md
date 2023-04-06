@@ -112,6 +112,39 @@ function CommentList(props) {
 
 export default CommentList;
 ```
+### CH06 State와 생명주기★★
+**State**란?
+    > 리액트 컴포넌트의 _**상태**_를 의미함.
+     > _**상태**_란 정상/비정상 이 아닌 _**컴포넌트의 데이터**_를 의미한다.
+      > 더 정확히는 컴포넌트의 _**변경가능한 데이터**_를 의미함.
+    ※ State가 변하면 다시 렌더링이 되기 때문에 렌더링과 관련된 값만 state에 포함시켜야 한다.
+ 예시를 통해 알아보는 State의 특징
+ ```js
+ class LikeButton extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            liked: false
+        };
+    }
+    ...
+ }
+ ```
+    > 자바스크립의 객체이다. (react만의 특별한 개체가 아님.)
+    > constructor는 생성자
+예시++
+```js
+// state를 직접 수정 (잘못된 방법)
+this.state = {
+    name: 'Inje'
+};
+
+// setState 함수를 통한 수정 (정상적인 사용법)
+this.setState({
+    name: 'inJe'
+});
+```
+    > state 변경 시에는 setState() 함수를 사용할 것.
 ## 5주차 2023-03-30
 ### babel 링크 위치  
     > 구글 react 검색 - react 사이트
