@@ -145,7 +145,7 @@ this.setState({
 });
 ```
     > state 변경 시에는 setState() 함수를 사용할 것.
-비유를 통해 알아보는 component, element, instance
+#### 비유를 통해 알아보는 component, element, instance
     > Component -> 빵
     > elelment -> 빵틀
     > instance -> 재료
