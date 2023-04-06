@@ -21,7 +21,97 @@ ex - 이미지를 담당하는 Avatar 컴포넌트
 마지막에 export default를 해주어야 한다.
     > ※ 컴포넌트에 표시되는 내용을 동적으로 변경하기 위해서는 해당 요소를 **props.요소**
     로 변경하면 된다.
-    
+#### props 사용 예시
+-> css 스타일과 html div 형식이 지정된 comment.jsx
+```js
+import React from "react";
+
+const styles = {
+    wrapper: {
+        margin: 8,
+        padding: 8,
+        display: "flex",
+        flexDirection: "row",
+        border: "1px solid grey",
+        borderRadius: 16,
+    },
+    imageContainer: {},
+    image: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+    },
+    contentContainer: {
+        marginLeft: 8,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+    },
+    nameText: {
+        color: "black",
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+    commentText: {
+        color: "black",
+        fontSize: 16,
+    },
+  }
+
+function Comment(props){
+    return (
+        <div style={styles.wrapper}>
+            <div style={styles.imageContainer}>
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+                    style={styles.image}
+                />
+            </div>
+            <div style={styles.contentContainer}>
+                <span style={styles.nameText}>{props.name}</span>
+                <span style={styles.commentText}>{props.comment}</span>
+            </div>
+        </div>
+    );
+}
+
+export default Comment;
+```
+-> comment.jsx를 import받아 변수에 들어갈 내용을 정의하고 페이지에 띄울 commentList.jsx
+```js
+import React from "react";
+import Comment from "./Comment";
+
+const comments = [
+    {
+        name: "유재석",
+        comment: "안녕하세요, 유재석입니다.",
+    },
+    {
+        name: "박명수",
+        comment: "리액트 재미있어요~!",
+    },
+    {
+        name: "정준하",
+        comment: "저도 리액트 배워보고 싶어요!",
+    },
+];
+
+function CommentList(props) {
+    return(
+        <div>
+            {comments.map((comment) => {
+                return(
+                    <Comment name={comment.name} comment={comment.comment} />
+                );
+            })}
+        </div>
+    );
+}
+
+
+export default CommentList;
+```
 ## 5주차 2023-03-30
 ### babel 링크 위치  
     > 구글 react 검색 - react 사이트
