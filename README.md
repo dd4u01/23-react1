@@ -146,9 +146,9 @@ this.setState({
 ```
     > state 변경 시에는 setState() 함수를 사용할 것.
 비유를 통해 알아보는 component, element, instance
-    Component -> 빵
-    elelment -> 빵틀
-    instance -> 재료
+    > Component -> 빵
+    > elelment -> 빵틀
+    > instance -> 재료
 #### 생명주기
     **생명주기**란 컴포넌트의 생성 시점, 사용 시점, 종료 시점을 나타내는 것이다.
     1. constructor가 실행되면서 컴포넌트가 생성됨
