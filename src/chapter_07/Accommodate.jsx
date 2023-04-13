@@ -27,6 +27,7 @@ function Accommodate(props) {
             </button>
             <button onClick={decreaseCount}>퇴장</button>
 
+            {/* &&는 조건부 렌더링을 위해 사용, ㅁ && △ 에서 ㅁ가 true 일 때 실행됨. */}
             {isFull && <p style={{ color: "red" }}>정원이 가득 찼습니다.</p>}
         </div>
     );
