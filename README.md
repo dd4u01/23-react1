@@ -1,4 +1,87 @@
-# 김경석
+# 김경석  
+## 12주차 2023-05-18  
+### CH13 - 합성이란  
+    >  여러개의 컴포넌트를 합쳐서 새로운 컴포넌트를 만드는 것
+        > Containment -> 하위 컴포넌트를 포함하는 형태의 합성 방법
+```js
+props에 기본적으로 들어있는 children 속성을 사용한 Containment 사용예시
+
+function FancyBorder(props){
+    return(
+        <div className={'FancyBorder FancyBorder-' + props.color}>
+            {props.children}
+        </div>
+    );
+}
+```
+### Specailization (전문화, 특수화)  
+    > 범용적인 개념을 구별이 되게 구체화 하는 것
+```js
+코드를 통한 예시
+function Dialog(props) {
+    return (
+        <FancyBorder color="blue">
+            <h1 className="Dialog-title">
+                {props.title}
+            </h1>
+            <p className="Dialog-message">
+                {props.message}
+            </p>
+        </FancyBorder>
+    );
+}
+function WelcomeDialog(props){
+    return(
+        <Dialog
+            title="어서오세요"
+            message="우리 사이트에 방문하신 것을 환영합니다!"
+        />
+    );
+}
+
+-> title 과 message props를 사용하는 방식에 따라 경고 Dialog, 인사 Dialog 등으로 특수한 활용이 가능.
+```
+
+### CH14 - 컨텍스트란?  
+    > 컴포넌트 트리를 통해 곧바로 컴포넌트에 전달하는 새로운 방식  
+        > 380pg 그림 참고  
+#### 컨텍스트 사용 예시  
+```js
+// 컨텍스트는 데이터를 매번 컴포넌트를 통해 전달할 필요 없이 컴포넌트 트리로 곧바로 전달  
+// 기본값이 'light'인 컨텍스트를 생성.  
+const ThemeContext = React.createContext('light');
+
+// Provider를 사용하여 하위 컴포넌트들에게 현재 테마 데이터를 전달  
+// 모든 하위 컴포넌트들은 컴포넌트 트리 하단에 얼마나 깊이 있는지에 관계없이 데이터를 읽을 수 있음.  
+// 현재 테마값으로는 'dark'를 전달중  
+function App(props){
+    return(
+        <ThemeContext.Provider value="dark">
+            <Toolbar />
+        </ThemeContext.Provider>
+    );
+}
+
+// 이로써 중간에 위치한 컴포넌트는 테마 데이터를 하위 컴포넌트로 전달할 필요가 없음.  
+function Toolbar(props) {
+    return(
+        <div>
+            <ThemedButton />
+        </div>
+    );
+}
+
+function ThemedButton(props){
+    // 리액트는 가장 가까운 상위테마 Provider를 찾아서 해당 값을 사용한다.  
+    // 만약 해당되는 Provider가 없을 경우 기본값(light)을 사용한다.  
+    // 여기서는 상위 Provider가 있기 떄문에 현재 테마의 값은 'dark'가 된다.  
+    return(
+        <ThemeContext.Consumer>
+            {value => <Button theme={value} />}
+        </ThemeContext.Consumer>
+    )
+}
+```
 ## 11주차 2023-05-11 
 ### 폼이란
     > 사용자로부터 입력을 받기 위해 사용하는 것
